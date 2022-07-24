@@ -12,7 +12,7 @@ parser.add_argument("y", type=int, help="the exponent")
 args = parser.parse_args()
 answer = args.x**args.y
 
-if args.mode:
+if args.quiet:
     print(answer)
 elif args.verbose:
     print(f"{args.x} to the power {args.y} equals {answer}")
