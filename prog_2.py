@@ -11,19 +11,20 @@ group.add_argument("-q", "--quiet", action="store_true")
 group.add_argument("-i", "--input", help="input sample", action="store_true")
 group.add_argument("-u", "--user", help="user sample", action="store_true")
 group.add_argument("-o", "--output", help="output sample", action="store_true")
+group.add_argument('--values', type=int, nargs=3)
 args = parser.parse_args() # blah
 
-'''
-if args.input:
-    print(f"Input file is: {args.input}")
-    '''
 
 if args.input: # -i was typed
-    print("fYour input file is: {args.number} {input}")
+    print(f"Your input file is: {args.verbose}")
 elif args.user: # -u was typed
-    print(f"Your user file is: {args.user} {user}")
+    print(f"Your user file is: {args.user}")
 elif args.output: # -o was typed
     print(f"Your user file is: {args.output}")
 
 else:
-    print("Error! Not correctly typed in!")
+    print("Error! Please try Again")
+
+sum = sum(args.values)
+print('sum:', sum)
+
