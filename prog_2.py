@@ -23,6 +23,10 @@ elif args.user: # -u was typed
 elif args.output: # -o was typed
     print(f"Your user file is: {args.output}") 
 
+elif args.subtract:
+    differece = args.x - args.y
+    print ('Difference:', difference)
+
 elif args.name:
     print('Hello,', args.name)
 
