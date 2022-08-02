@@ -6,25 +6,20 @@ import argparse
 
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group()
-group.add_argument("-i", "--input", help="input sample", action="store_true")
-group.add_argument("-u", "--user", help="user sample", action="store_true")
-group.add_argument("-o", "--output", help="output sample", action="store_true")
-parser.add_argument('x', type=int) # positional argument x 
-parser.add_argument('y', type=int) # positional argument y
-parser.add_argument('--values', type=int, nargs=3)
+group.add_argument('--values', type=int, nargs=3)
 parser.add_argument('--name', type=str, required=True)
+group.add_argument('--add', action='store_true')
+group.add_argument('--subtract', action='store_true')
+parser.add_argument('x', type=int, help="positional argument x") # positional argument x
+parser.add_argument('y', type=int, help="positional argument y") # positional argument y
 args = parser.parse_args() # blah
 
-
-if args.input: # -i was typed
-    print(f"Your input file is: {args.verbose}")
-elif args.user: # -u was typed
-    print(f"Your user file is: {args.user}")
-elif args.output: # -o was typed
-    print(f"Your user file is: {args.output}") 
+if args.add:
+    total = args.x + args.y
+    print ('Difference:', total)
 
 elif args.subtract:
-    differece = args.x - args.y
+    difference = args.x - args.y
     print ('Difference:', difference)
 
 elif args.name:
